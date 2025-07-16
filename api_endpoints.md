@@ -1,4 +1,4 @@
-# Zoo API Resource Endpoints
+# Zoo Simulator API Design
 | **Resource** | **HTTP Verb** | **Resource URL** | **Use Case** |
 |--------------|---------------|------------------|--------------|
 | Visitors     | POST          | `/tickets`                            | Creating a ticket |
