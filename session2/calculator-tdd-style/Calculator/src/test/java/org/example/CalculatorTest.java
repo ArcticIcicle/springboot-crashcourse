@@ -1,6 +1,7 @@
 package org.example;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -133,5 +134,46 @@ public class CalculatorTest {
         assertEquals(10.87902756f, actual, 0.0001);
     }
 
+    // divide by zero
+    @Test
+    @DisplayName("Division by zero should throw an ArithmeticException")
+    void shouldThrowArithmeticExceptionWhenDividedByZero(){
+        Exception exception = assertThrows(ArithmeticException.class,
+                () -> this.calculator.divide(6,0));
+
+        assertEquals("/ by zero", exception.getMessage());
+    }
+
+    // divide
+    @Test
+    void shouldDivideTwoIntegers(){
+        int actual = this.calculator.divide(6,3);
+        assertEquals(2, actual);
+    }
+    @Test
+    void shouldDivideTwoLongs(){
+        long actual = this.calculator.divide(250000000000L,500000L);
+        assertEquals(500000L, actual);
+    }
+
+    @Test
+    void shouldDivideTwoDoubles(){
+        double actual = this.calculator.divide(7.15,1.30);
+        assertEquals(5.50, actual, 0.0001);
+    }
+
+    @Test
+    void shouldDivideTwoShorts(){
+        short a = 150;
+        short b = 10;
+        short actual = this.calculator.divide(a,b);
+        assertEquals(15, actual);
+    }
+
+    @Test
+    void shouldDivideTwoFloats(){
+        float actual = this.calculator.divide(10.87902756f,2.1234f);
+        assertEquals(5.1234f, actual, 0.0001);
+    }
 }
 
