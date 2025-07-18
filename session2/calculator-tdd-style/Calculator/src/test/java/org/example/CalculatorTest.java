@@ -53,7 +53,7 @@ public class CalculatorTest {
     @Test
     void shouldAddTwoDoubles(){
         double actual = this.calculator.add(10.25,15.50);
-        assertEquals(25.75, actual);
+        assertEquals(25.75, actual, 0.0001);
     }
     @Test
     void shouldAddTwoShorts(){
@@ -66,8 +66,33 @@ public class CalculatorTest {
     @Test
     void shouldAddTwoFloats(){
         float actual = this.calculator.add(10.25123f,15.50123f);
-        assertEquals(25.75246, actual, 0.01);
+        assertEquals(25.75246, actual, 0.0001);
     }
 
+    @Test
+    void shouldSubtractTwoIntegers(){
+        int actual = this.calculator.subtract(5,3);
+        assertEquals(2, actual);
+    }
+
+
+    @Test
+    void shouldSubtractTwoDoubles(){
+        double actual = this.calculator.subtract(15.50,10.30);
+        assertEquals(5.20, actual, 0.0001);
+    }
+    @Test
+    void shouldSubtractTwoShorts(){
+        short a = 15;
+        short b = 10;
+        short actual = this.calculator.subtract(a,b);
+        assertEquals(5, actual);
+    }
+
+    @Test
+    void shouldSubtractTwoFloats(){
+        float actual = this.calculator.subtract(5.1234f,2.1234f);
+        assertEquals(3.0000f, actual, 0.0001);
+    }
 }
 
