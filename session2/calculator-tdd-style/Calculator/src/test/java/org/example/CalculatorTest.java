@@ -55,6 +55,7 @@ public class CalculatorTest {
         double actual = this.calculator.add(10.25,15.50);
         assertEquals(25.75, actual, 0.0001);
     }
+
     @Test
     void shouldAddTwoShorts(){
         short a = 15;
@@ -75,12 +76,18 @@ public class CalculatorTest {
         assertEquals(2, actual);
     }
 
+    @Test
+    void shouldSubtractTwoLongs(){
+        long actual = this.calculator.subtract(500000L,200000L);
+        assertEquals(300000, actual);
+    }
 
     @Test
     void shouldSubtractTwoDoubles(){
         double actual = this.calculator.subtract(15.50,10.30);
         assertEquals(5.20, actual, 0.0001);
     }
+
     @Test
     void shouldSubtractTwoShorts(){
         short a = 15;
@@ -94,5 +101,37 @@ public class CalculatorTest {
         float actual = this.calculator.subtract(5.1234f,2.1234f);
         assertEquals(3.0000f, actual, 0.0001);
     }
+
+    @Test
+    void shouldMultiplyTwoIntegers(){
+        int actual = this.calculator.multiply(6,3);
+        assertEquals(18, actual);
+    }
+    @Test
+    void shouldMultiplyTwoLongs(){
+        long actual = this.calculator.multiply(500000L,500000L);
+        assertEquals(250000000000L, actual);
+    }
+
+    @Test
+    void shouldMultiplyTwoDoubles(){
+        double actual = this.calculator.multiply(5.50,1.30);
+        assertEquals(7.15, actual, 0.0001);
+    }
+
+    @Test
+    void shouldMultiplyTwoShorts(){
+        short a = 15;
+        short b = 10;
+        short actual = this.calculator.multiply(a,b);
+        assertEquals(150, actual);
+    }
+
+    @Test
+    void shouldMultiplyTwoFloats(){
+        float actual = this.calculator.multiply(5.1234f,2.1234f);
+        assertEquals(10.87902756f, actual, 0.0001);
+    }
+
 }
 
