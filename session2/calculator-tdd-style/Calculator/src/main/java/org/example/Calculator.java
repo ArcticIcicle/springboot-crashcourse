@@ -1,0 +1,39 @@
+package org.example;
+
+public class Calculator {
+
+    public boolean status = false;
+    public boolean isOn(){
+        return status;
+    }
+
+    public boolean isOff(){
+        return !status;
+    }
+    public void turnOn(){
+        status = true;
+    }
+
+    public void turnOff(){
+        status = false;
+    }
+
+    public int add(int a, int b){
+        return a + b;
+    }
+    public long add(long a, long b){
+        return a + b;
+    }
+    public double add(double a, double b){
+        return a + b;
+    }
+    public short add(short a, short b){
+        return (short) (a + b);
+    }
+    public float add(float a, float b){
+        return a + b;
+    }
+
+
+
+}
